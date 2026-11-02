@@ -31,13 +31,17 @@ class LocationType extends AbstractType
                 ],
             ])
             ->add('latitude', NumberType::class, [
+                'html5' => true,
                 'attr' => [
-                    'placeholder' => 'Enter latitude',
+                    'min' => -90,
+                    'max' => 90
                 ],
             ])
             ->add('longitude', NumberType::class, [
+                'html5' => true,
                 'attr' => [
-                    'placeholder' => 'Enter longitude',
+                    'min' => -90,
+                    'max' => 90
                 ]
             ])
         ;

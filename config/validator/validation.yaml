@@ -1,0 +1,48 @@
+App\Entity\Location:
+    properties:
+        country:
+            - NotBlank:
+                  groups: [Default]
+        latitude:
+            - NotBlank:
+                  groups: [Default]
+            - Range:
+                  min: -90
+                  max: 90
+                  groups: [Default]
+        longitude:
+            - NotBlank:
+                  groups: [Default]
+            - Range:
+                min: -180
+                max: 180
+                groups: [Default]
+
+App\Entity\Measurement:
+    properties:
+        location:
+            - NotBlank:
+                  groups: [Default]
+        temperature:
+            - NotBlank:
+                  groups: [Default]
+        humidity:
+            - NotBlank:
+                  groups: [Default]
+            - Range:
+                  min: 0
+                  max: 100
+                  groups: [Default]
+        precipitation:
+            - NotBlank:
+                  groups: [Default]
+            - Range:
+                  min: 0
+                  max: 100
+                  groups: [Default]
+        wind:
+            - NotBlank:
+                  groups: [Default]
+        timestamp:
+            - NotBlank:
+                  groups: [Default]
