@@ -7,10 +7,11 @@
 
 {% block body %}
     <main>
-        <h1>Weather in {{ location.city }}, {{ location.country }}</h1>
+        <h1>Weather in {{ location.city }}, {{ location.country }} ({{ location.latitude }}, {{ location.longitude }})</h1>
 
         <ul>
             {% for measurement in measurements %}
+                <li>Date: {{ measurement.timestamp|date('d/m/Y') }}</li>
                 <li>Temperature: {{ measurement.temperature }}°C</li>
                 <li>Humidity: {{ measurement.humidity }}%</li>
                 <li>Precipitation: {{ measurement.precipitation }}%</li>
